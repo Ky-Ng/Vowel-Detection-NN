@@ -1,6 +1,6 @@
 # Vowel Detection NN using LPC
 
-- Training a Feedforward Neural Network to classify vowels using LPC
+- Training a Feedforward Neural Network to classify vowels using PyTorch, SciPy, and Librosa
 
 ## Linear Predictive Coding (LPC)
 
