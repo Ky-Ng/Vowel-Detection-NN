@@ -1,2 +1,3 @@
 wav_data
 *.mat
+.librosa_venv
