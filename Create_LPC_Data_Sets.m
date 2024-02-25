@@ -53,16 +53,3 @@ end
 
 save training_lpc1 training_lpc
 save ground_truth1 ground_truth
-
-data = load("ground_truth1.mat")
-
-% NNData.training_lpc = training_lpc;
-% NNData.ground_truth = ground_truth;
-% save NNData NNdata
- end
-
-function one_hot_encoding = get_one_hot_encoding(vowels_list, vowel_name)
-    % Initialize with a row of 0's 
-    one_hot_encoding = zeros(1, length(vowels_list));
-    
-end
