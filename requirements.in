@@ -1,3 +1,9 @@
+# Neural Network Libraries
 torch
 scipy
-torch
+
+# Audio Processing Library
+librosa
+
+# Jupyter Notebook
+ipykernel
