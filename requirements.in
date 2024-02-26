@@ -5,5 +5,8 @@ scipy
 # Audio Processing Library
 librosa
 
+# Plotting Utilities
+matplotlib
+
 # Jupyter Notebook
 ipykernel
