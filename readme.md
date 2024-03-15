@@ -1,20 +1,20 @@
 # Vowel Classification Neural Network
 ___
 ## Table of Contents
-1. Motivation
-2. High Level Overview
-3. Tangent: Formants and LPCs
-	1. Linear Predictive Coding
-	2. Sampling Rates
-	3. Neural Network Motivation
-4. Technologies Used
-	1. Signal Processing
-	2. Neural Network Training
-5. Vowel NN Classifier 
-	1. Dataset Building
-	2. Vowel Classification Training
-	3. Side Tangent: Vowel Backness
-	4. Limitations
+1. [Motivation](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#motivation)
+2. [High Level Overview](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#high-level-overview)
+3. [Tangent: Formants and LPCs](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#tangent-formants-and-lpcs)
+	1. [Linear Predictive Coding](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#linear-predictive-coding)
+	2. [Sampling Rates](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#sampling-rates)
+	3. [Neural Network Motivation](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#neural-network-motivation)
+4. [Technologies Used](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#technologies-used)
+	1. [Signal Processing](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#signal-processing)
+	2. [Neural Network Training](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#neural-network-training)
+5. [Vowel NN Classifier ](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#vowel-nn-classifier)
+	1. [Dataset Building](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#1-dataset-building)
+	2. [Vowel Classification Training](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#2-vowel-classification-training)
+	3. [Side Tangent: Vowel Backness](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#side-tangent-vowel-backness)
+	4. [Limitations](https://github.com/Ky-Ng/Vowel-Detection-NN/tree/dev/readme?tab=readme-ov-file#limitations)
 ___
 ## Motivation
 Create (1) Training Data, (2) Ground Truth Labels, and (3) Neural Network Architectures to identify a vowel based on its [Linear Predictive Coding (LPC) Coefficients](https://sail.usc.edu/~lgoldste/Ling582/Week%209/LPC%20Analysis.pdf) 
