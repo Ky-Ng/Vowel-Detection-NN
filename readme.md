@@ -17,7 +17,9 @@ ___
 	4. [Limitations](#limitations)
 ___
 ## Motivation
-Create (1) Training Data, (2) Ground Truth Labels, and (3) Neural Network Architectures to identify a vowel based on its [Linear Predictive Coding (LPC) Coefficients](https://sail.usc.edu/~lgoldste/Ling582/Week%209/LPC%20Analysis.pdf) 
+Create a Neural Network to identify vowels based on their [Linear Predictive Coding (LPC) Coefficients](https://sail.usc.edu/~lgoldste/Ling582/Week%209/LPC%20Analysis.pdf). 
+
+For a walkthrough of this repository, checkout this [video](https://youtu.be/mupAVVaChbw).
 
 *Shoutout to my Linguistics professor who wrote this in 1992 and is still teaching this to us at the ripe age of 70+.*
 ___
