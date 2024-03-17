@@ -17,7 +17,7 @@ ___
 	4. [Limitations](#limitations)
 ___
 ## Motivation
-Create a Neural Network to identify vowels based on their [Linear Predictive Coding (LPC) Coefficients](https://sail.usc.edu/~lgoldste/Ling582/Week%209/LPC%20Analysis.pdf). 
+Feedforward Neural Network for speech recognition of vowels using [Linear Predictive Coding (LPC) Coefficients](https://sail.usc.edu/~lgoldste/Ling582/Week%209/LPC%20Analysis.pdf). 
 
 For a walkthrough of this repository, checkout this [video](https://youtu.be/mupAVVaChbw).
 
