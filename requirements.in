@@ -2,6 +2,9 @@
 torch
 scipy
 
+# Transformer Architectures
+transformers
+
 # Audio Processing Library
 librosa
 
@@ -10,3 +13,4 @@ matplotlib
 
 # Jupyter Notebook
 ipykernel
+

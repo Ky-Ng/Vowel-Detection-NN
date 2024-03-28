@@ -31,11 +31,20 @@ decorator==5.1.1
 executing==2.0.1
     # via stack-data
 filelock==3.13.1
-    # via torch
+    # via
+    #   huggingface-hub
+    #   torch
+    #   transformers
 fonttools==4.49.0
     # via matplotlib
 fsspec==2024.2.0
-    # via torch
+    # via
+    #   huggingface-hub
+    #   torch
+huggingface-hub==0.22.0
+    # via
+    #   tokenizers
+    #   transformers
 idna==3.6
     # via requests
 ipykernel==6.29.2
@@ -91,11 +100,14 @@ numpy==1.26.4
     #   scikit-learn
     #   scipy
     #   soxr
+    #   transformers
 packaging==23.2
     # via
+    #   huggingface-hub
     #   ipykernel
     #   matplotlib
     #   pooch
+    #   transformers
 parso==0.8.3
     # via jedi
 pexpect==4.9.0
@@ -126,12 +138,23 @@ python-dateutil==2.8.2
     # via
     #   jupyter-client
     #   matplotlib
+pyyaml==6.0.1
+    # via
+    #   huggingface-hub
+    #   transformers
 pyzmq==25.1.2
     # via
     #   ipykernel
     #   jupyter-client
+regex==2023.12.25
+    # via transformers
 requests==2.31.0
-    # via pooch
+    # via
+    #   huggingface-hub
+    #   pooch
+    #   transformers
+safetensors==0.4.2
+    # via transformers
 scikit-learn==1.4.1.post1
     # via librosa
 scipy==1.12.0
@@ -153,12 +176,18 @@ sympy==1.12
     # via torch
 threadpoolctl==3.3.0
     # via scikit-learn
+tokenizers==0.15.2
+    # via transformers
 torch==2.2.0
     # via -r requirements.in
 tornado==6.4
     # via
     #   ipykernel
     #   jupyter-client
+tqdm==4.66.2
+    # via
+    #   huggingface-hub
+    #   transformers
 traitlets==5.14.1
     # via
     #   comm
@@ -167,8 +196,11 @@ traitlets==5.14.1
     #   jupyter-client
     #   jupyter-core
     #   matplotlib-inline
+transformers==4.39.1
+    # via -r requirements.in
 typing-extensions==4.9.0
     # via
+    #   huggingface-hub
     #   librosa
     #   torch
 urllib3==2.2.1
