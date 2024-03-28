@@ -1,3 +1,6 @@
 wav_data
 *.mat
 .librosa_venv
+.DS_Store
+.transformers_venv/
+Hillenbrand/
