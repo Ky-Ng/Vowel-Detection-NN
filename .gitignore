@@ -8,3 +8,4 @@
 # Data Inputs
 wav_data
 *.mat
+*.npy
