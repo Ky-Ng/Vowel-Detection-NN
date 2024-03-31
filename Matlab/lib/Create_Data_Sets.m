@@ -10,7 +10,7 @@ function Create_Data_Sets(VOWELS, TRAINING_AUDIO_PATH, SAVE_DATA_LOCATION, ORIGI
     wav_parameterization = [];
     one_hot_encoding_labels = [];
 
-    % Step 1) Go through each vowle in `VOWELS`
+    % Step 1) Go through each vowel in `VOWELS`
     for vowel_idx = 1 : length(VOWELS)
         full_path = TRAINING_AUDIO_PATH + "*/*" + VOWELS(vowel_idx) + "*.wav";
         vowel_files = dir(full_path);
