@@ -2,10 +2,12 @@ function Get_MFCC_Coef_TestDriver()
     close all;
     clc;
 
+    addpath("./lib/")
+
     % Declare Constants
-    VOWELS = {"iy"; "ih"; "ey"; "eh"; "ae"; "uw"; "uh"; "ow"; "ao"; "aa"};
+    VOWELS = {"iy"; "ih"; "ey"; "eh"; "ae"; "uw"; "uh"};
     % VOWELS = {"iy"; "ih"; "ey"; "eh"; "ae"; "uw"; "uh"};
-    % PLOT_COLOR = ["red"; "green"; "blue"; "cyan"; "magenta"; "yellow"; "black"] ;
+    PLOT_COLOR = ["red"; "green"; "blue"; "cyan"; "magenta"; "yellow"; "black"] ;
 
     % VOWELS = {"iy"; "uw"};
     % PLOT_COLOR = ["red"; "green" ] ;
@@ -51,6 +53,8 @@ function Get_MFCC_Coef_TestDriver()
             training_label = [training_label; one_hot_encoding];
             
         end
+        xlabel("MFCC Coefficient");
+        ylabel("MFCC Value")
     end
     
 
