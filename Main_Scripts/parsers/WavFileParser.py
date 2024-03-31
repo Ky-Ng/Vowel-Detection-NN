@@ -1,6 +1,7 @@
 import numpy as np
 import librosa
 import os
+import matplotlib.pyplot as plt
 from enum import Enum
 
 
@@ -76,7 +77,7 @@ class WavFileParser:
             serialize_path: str,
             parameterization: WavParameterization = None
     ) -> np.array:
-        
+
         # Step 0) Check to see that a parameterization setting is set
         if parameterization is None:
             raise ValueError(
@@ -86,7 +87,7 @@ class WavFileParser:
         # Step 1) Create Serialization path
         wav_file_name = os.path.basename(wav_file_path)
         save_name = f"{wav_file_name}_{parameterization.name}_{self.NUM_COEFF}.npy"
-        
+
         to_serialize_path = os.path.join(serialize_path, save_name)
         print("to_serialize_path", to_serialize_path)
         # Case 1) Check to see if `wav_f`ile` has been serialized before
@@ -98,7 +99,12 @@ class WavFileParser:
         # Case 2) wav_file has not been parameterized and serialized before
 
         # Step 1) Preprocess the Audio File
-        audio = self.pre_process_audio(path_to_audio_file=wav_file_path)
+        audio = self.pre_process_audio(
+            path_to_audio_file=wav_file_path,
+            # Use High Frequency Heuristic only if LPC mode is selected
+            HIGH_FREQUENCY_HEURISTIC=(
+                parameterization == WavParameterization.LPC)
+        )
 
         # Step 2) Parameterize the audio using MFCCs or LPCs
         parameterized_audio = None
@@ -219,11 +225,16 @@ def main():
         VOWEL_LIST=["iy", "ih", "eh", "ae", "ey"]
     )
     print(parser.get_vowel_encoding("ih"))
-    print(parser.wav_to_coef(
+    parameterized_audio = parser.wav_to_coef(
         "../../wav_data/USC_487_wav_data/wav_data/Vowels_Amanda/aa_amanda.wav",
         serialize_path="./",
         parameterization=WavParameterization.MFCC).T
-    )
+
+    plt.plot(parameterized_audio[0])
+    plt.xlabel('Frame')
+    plt.ylabel('MFCC')
+    plt.title('First MFCC feature of differentiated audio')
+    plt.show()
 
 
 if __name__ == "__main__":
