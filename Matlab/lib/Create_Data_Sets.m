@@ -1,5 +1,5 @@
 % Creates a .mat file containing the Wav Parameterization and 
-function Create_Data_Sets(VOWELS, TRAINING_AUDIO_PATH, SAVE_DATA_LOCATION, ORIGINAL_SAMPLING_RATE, NUM_COEFICIENTS, parameterization_mode)
+function Create_Data_Sets(VOWELS, TRAINING_AUDIO_PATH, SAVE_DATA_LOCATION, ORIGINAL_SAMPLING_RATE, NUM_COEFICIENTS, parameterization_mode, CONTAINS_SUB_DIR)
     close all;
     clc;
 
@@ -12,7 +12,10 @@ function Create_Data_Sets(VOWELS, TRAINING_AUDIO_PATH, SAVE_DATA_LOCATION, ORIGI
 
     % Step 1) Go through each vowel in `VOWELS`
     for vowel_idx = 1 : length(VOWELS)
-        full_path = TRAINING_AUDIO_PATH + "*/*" + VOWELS(vowel_idx) + "*.wav";
+        full_path = TRAINING_AUDIO_PATH + "/*" + VOWELS(vowel_idx) + "*.wav";
+        if CONTAINS_SUB_DIR
+            full_path = TRAINING_AUDIO_PATH + "/*/*" + VOWELS(vowel_idx) + "*.wav";
+        end
         vowel_files = dir(full_path);
 
         % Step 2) Go through each corresponding `vowel.wav` file
