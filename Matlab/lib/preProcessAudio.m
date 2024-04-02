@@ -15,6 +15,18 @@ function processed_audio = preProcessAudio(audio_file_path, original_sampling_ra
     processed_audio = downSampleAudio(trimmed_audio, original_sampling_rate, target_sampling_rate);
 end
 
+% Function to center the audio with a ms window as an alternative to removeSilence, may also work well for CVC segments
+function centered_audio = get_center_audio(audioIn, original_sampling_rate, half_window_ms)
+    % Step 1) Calculate Center of the File and number of samples to get the window of ms
+    middle_sample_idx = round(length(audioIn) / 2);
+
+    sec_to_ms = (1 / 1000);
+    num_samples_per_window = round(half_window_ms * sec_to_ms * original_sampling_rate);
+
+    % Step 2) Get the middle of the file
+    centered_audio = audioIn(middle_sample_idx-num_samples_per_window:middle_sample_idx+num_samples_per_window);
+end
+
 % Helper function to resample audio since most parameterization heuristics are 1 coefficient per 1kHz sampling rate
 function resampled_audio = downSampleAudio(audioIn, original_sampling_rate, target_sampling_rate)
     resampled_audio = resample(audioIn, target_sampling_rate, original_sampling_rate);
