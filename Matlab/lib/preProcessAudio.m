@@ -5,7 +5,8 @@ function processed_audio = preProcessAudio(audio_file_path, original_sampling_ra
     raw_audio = audioread(audio_file_path);
 
     % Step 2) Crop Audio by removing silences 
-    trimmed_audio = removeSilence(raw_audio, original_sampling_rate);
+    % trimmed_audio = removeSilence(raw_audio, original_sampling_rate);
+    trimmed_audio = get_center_audio(raw_audio, original_sampling_rate, 100);
     
     % Optional: Look at the raw and trimmed audio in a side by side bar chart
     % figure;
@@ -24,7 +25,7 @@ function centered_audio = get_center_audio(audioIn, original_sampling_rate, half
     num_samples_per_window = round(half_window_ms * sec_to_ms * original_sampling_rate);
 
     % Step 2) Get the middle of the file
-    centered_audio = audioIn(middle_sample_idx-num_samples_per_window:middle_sample_idx+num_samples_per_window);
+    centered_audio = audioIn(max(middle_sample_idx-num_samples_per_window, 1):min(middle_sample_idx+num_samples_per_window, length(audioIn)));
 end
 
 % Helper function to resample audio since most parameterization heuristics are 1 coefficient per 1kHz sampling rate

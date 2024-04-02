@@ -8,7 +8,7 @@ function Create_Training_Data()
 
     SAVE_DATA_LOCATION_BASE = "./data/Hillenbrand";
 
-    ORIGINAL_SAMPLING_RATE = 44100;
+    ORIGINAL_SAMPLING_RATE = 16000;
     NUM_COEFICIENTS = 14;
 
     speaker_type_subfolders = dir(AUDIO_PATH)
